@@ -1,19 +1,22 @@
 <%- include partials/header.ejs %>
   
 <%- include partials/main_navbar.ejs%>
-
+<br><br>
     <!--Main Body-->
-    <main class="container">
-    <h1>Welcome to the <%= title %> page</h1>
+    <main class="container"  style="background-color:#e6f7ff;">
           <% if(title=="Home"){ %>
              <%- include  partials/home.ejs %>
           <% } else if(title=="About"){ %>
+          <h1>Welcome to the <%= title %> page</h1>
              <%- include  partials/about.ejs %>
           <% } else if(title=="Projects"){%>
+          <h1>Welcome to the <%= title %> page</h1>
              <%- include  partials/projects.ejs %>
           <% } else if(title=="Services"){%>
+          <h1>Welcome to the <%= title %> page</h1>
              <%- include  partials/services.ejs %>
           <% } else if(title=="Contact"){%>
+          <h1>Welcome to the <%= title %> page</h1>
              <%- include  partials/contact.ejs %>
           <% } %>
     </main>
