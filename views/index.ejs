@@ -7,20 +7,16 @@
           <% if(title=="Home"){ %>
              <%- include  partials/home.ejs %>
           <% } else if(title=="About"){ %>
-          <h1>Welcome to the <%= title %> page</h1>
              <%- include  partials/about.ejs %>
           <% } else if(title=="Projects"){%>
-          <h1>Welcome to the <%= title %> page</h1>
              <%- include  partials/projects.ejs %>
           <% } else if(title=="Services"){%>
-          <h1>Welcome to the <%= title %> page</h1>
              <%- include  partials/services.ejs %>
           <% } else if(title=="Contact"){%>
-          <h1>Welcome to the <%= title %> page</h1>
              <%- include  partials/contact.ejs %>
           <% } %>
+          <br><br>
     </main>
-
 <%- include partials/bottom_navbar.ejs %>
 
 <%- include partials/footer.ejs %>
