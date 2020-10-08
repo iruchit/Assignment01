@@ -28,6 +28,7 @@
                 message       : ${message}`);
 
                 form.reset();
+                location.href="/home";
             });
 
             cancelButton.addEventListener("click", (event) => {
