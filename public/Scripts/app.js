@@ -1,9 +1,10 @@
 
 // IIfe 
+
 /*File name: app.js
   Ruchit Patel
   301094664
-  6th october 2020*/
+  15th october 2020*/
 (function() {
     function Start()
     {
@@ -36,6 +37,19 @@
                 if(confirm("Are you sure?"))
                 {
                     location.href="/home";
+                }
+            });
+        }
+        //To prevent the instant deletion...
+        let deletButton = document.querySelectorAll('.btn-danger');
+        
+        for(button of deletButton)
+        {
+            button.addEventListener('click', (event)=>{
+                if(!confirm("Are you sure?")) //if this is not true.. then it will goes into loop
+                {
+                    event.preventDefault();
+                    window.location.assign('/contact-list');
                 }
             });
         }

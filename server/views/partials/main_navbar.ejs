@@ -1,6 +1,6 @@
 <!-- main navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#"><img src="./Assets/images/Ruchitlogo.png" style="width:40px; height:40px;" alt="Ruchit's Logo">Ruchit Patel</a>
+      <a class="navbar-brand" href="#"><img src="/Assets/images/Ruchitlogo.png" style="width:40px; height:40px;" alt="Ruchit's Logo">Ruchit Patel</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,6 +38,14 @@
              <li class="nav-item">
           <% } %>
             <a class="nav-link" href="services"><i class="fas fa-briefcase"></i> Services </a>
+          </li>
+
+          <% if(title=="Contacts"){ %>
+             <li class="nav-item active">
+          <% } else { %>
+             <li class="nav-item">
+          <% } %>
+            <a class="nav-link" href="/contact-list"><i class="fas fa-id-card-alt"></i> Contacts </a>
           </li>
 
           <% if(title=="Contact"){ %>
