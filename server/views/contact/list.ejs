@@ -6,24 +6,39 @@
 <main class="d-flex justify-content-center">
     <div class="row">
         <div class="offset-md-1 col-md-12">
-            <h1><%= title %></h1>
-            <a href="/contact-list/add" class="btn btn-primary" role="button">
-            <i class="fas fa-plus-circle"></i> Add a Contact</a>
+            <h1 class="font-weight-bold text-center"><%= title %></h1>
+            <hr>
+            <% if(typeof displayName == 'string' && displayName) { %>
+                <a href="/contact-list/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add a Business Contact</a>
+            <% } %>
+            
             <br><br>
+
             <table class="table table-bordered table-striped table-hover">
                 <!--Header Row-->
-                <tr>
+                <tr class="thead-dark">
+                <% if(typeof displayName == 'string' && displayName) { %>
+                 
                     <th class="text-center col-2">Name</th>
                     <th class="text-center col-2">Contact Number</th>
                     <th class="text-center col-2">Email Address</th>
                     <th class="text-center col-3">Edit Contact</th>
                     <th class="text-center col-3">Delete Contact</th>
+                
+                <% } else { %>
+                
+                    <th class="text-center col-2">Name</th>
+                    <th class="text-center col-2">Contact Number</th>
+                    <th class="text-center col-2">Email Address</th>
+                
+                <% } %>
                 </tr>
                 <!--Repeatable Template Row-->
-
+                <% if(typeof displayName == 'string' && displayName) { %>
                 <% for(let count = 0; count < ContactList.length; count++) { %>
                     <tr>
-                        <td class="text-center col-2"><%= ContactList[count].name%></td>
+                        <td class="text-center col-2" id="name"><%= ContactList[count].name %></td>
                         <td class="text-center col-2"><%= ContactList[count].number%></td>
                         <td class="text-center col-2"><%= ContactList[count].email%></td>
                         <td class="text-center col-3">
@@ -36,7 +51,15 @@
                         </td>
                     </tr>
                 <% } %>
-                
+                <% } else {%>
+                    <% for(let count = 0; count < ContactList.length; count++) { %>
+                    <tr>
+                        <td class="text-center col-2"><%= ContactList[count].name%></td>
+                        <td class="text-center col-2"><%= ContactList[count].number%></td>
+                        <td class="text-center col-2"><%= ContactList[count].email%></td>
+                    </tr>
+                <% } %>
+                <% } %>
             </table>
         </div>
     </div>

@@ -1,10 +1,12 @@
 
 // IIfe 
 
+const { get } = require("jquery");
+
 /*File name: app.js
   Ruchit Patel
   301094664
-  15th october 2020*/
+  21th october 2020*/
 (function() {
     function Start()
     {
@@ -53,6 +55,16 @@
                 }
             });
         }
+
+        /*if(document.title=="Business Contacts"){
+            let list = document.getElementById("name").value;
+            function alphabetical() {
+                list.rsort();
+                document.getElementById("name").innerHTML = list;
+            }
+            alphabetical.addEventListener('load');
+        }*/
+        
     }
     window.addEventListener("load", Start);
   })();

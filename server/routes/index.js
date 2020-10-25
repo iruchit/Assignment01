@@ -19,4 +19,19 @@ router.get('/services', indexController.displayServicesPage);
 /*Contact page*/
 router.get('/contact', indexController.displayContactPage);
 
+/* Get Route for displaying the Login Page - Read operation */
+router.get('/login', indexController.displayLoginPage);
+
+/* Post Route for processing the Login Page - Read operation */
+router.post('/login', indexController.processLoginPage);
+
+/* Get Route for displaying the Register Page - Read operation */
+router.get('/register', indexController.displayRegisterPage);
+
+/* Post Route for processing the Register Page - Read operation */
+router.post('/register', indexController.processRegisterPage);
+
+/* Get to perform UserLogout */
+router.get('/logout', indexController.performLogout);
+
 module.exports = router;

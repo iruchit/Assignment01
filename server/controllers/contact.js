@@ -4,20 +4,22 @@ let mongoose = require('mongoose');
 
 //create a reference to the model
 let Contact = require('../models/contact');
-
+let mysort = {name : 1};
 module.exports.displayContactList = (req,res, next)=>{
     Contact.find((err, contactList)=>{
         if(err){
             return console.error(err);
         }
         else{
-            res.render('contact/list', {title: 'Contacts', ContactList: contactList});
+            res.render('contact/list', {title: 'Business Contacts', 
+            ContactList: contactList, 
+            displayName: req.user ? req.user.displayName : ''});
         }
-    });
+    }).sort(mysort);
 }
 
 module.exports.displayAddPage = (req, res, next)=>{
-    res.render('contact/add', {title: 'Add Contact'});
+    res.render('contact/add', {title: 'Add Contact', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.processAddPage = (req, res, next)=>{
@@ -50,7 +52,8 @@ module.exports.displayEditPage = (req, res, next)=>{
         }
         else{
             //show the edit view
-            res.render('contact/edit', {title:'Edit Contact', contact: contactToEdit})
+            res.render('contact/edit', {title:'Edit Contact', contact: contactToEdit,
+            displayName: req.user ? req.user.displayName : ''})
         }
     });
 }
